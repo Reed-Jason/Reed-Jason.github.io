@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript: Topics 1 and 2</title>
+    <script src="JavaScript_Topics_1,2,6.js"></script>
+</head>
+<body onload="mainExecution(1); mainExecution(2, 0); mainExecution(3);">
+    <h1>Employee and Pay Tracker</h1>
+    <h2>Employees</h2>
+    <ul id="employeeList">
+    </ul>
+    <button id="addEmployee" onclick="appendEmployeeForm()">Add Employee</button>
+    <div id="employeeForm"></div>
+    <br>
+    <h2>Individual Pay</h2>
+    <select id="employeeList2" onchange="individualPay(value)">
+    </select>
+    <h3 id="name"></h3>
+    <p id="salary"></p>
+    <p id="hours"></p>
+    <p id="pay"></p>
+    <button id="hoursButton" onclick=appendHours()>Update Hours</button>
+    <br><br>
+    <div id="updateHours"></div>
+    <br>
+    <h2>Total Pay</h2>
+    <p id="totalHours"></p>
+    <p id="totalPay"></p>
+    
+    
+</body>
+</html>
+

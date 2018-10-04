@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Fibonacci</title>
+    </head>
+    <body>
+        <script>
+        function fibonacci(index, number1, number2, count){
+            if(count < index){
+                var newNumber = number1 + number2;
+                console.log(newNumber);
+                fibonacci(index, number2, newNumber, ++count);
+            }
+        }
+        function calculateFib(){
+            var number = parseInt(document.getElementById("number").value);
+            var number1 = 0;
+            var number2 = 1;
+            if (number == 1) console.log(number1);
+            else if (number == 2) {
+                console.log(number1);
+                console.log(number2);
+            } else{
+                console.log(number1);
+                console.log(number2);
+                fibonacci(number - 2, number1, number2, number1)
+            }
+        }
+        </script>
+        <p>How many fibonacci numbers?</p>
+        <form>
+          <input id="number" type="text">
+          <input type="button" onclick="calculateFib()" value="Submit">
+        </form>
+        
+    </body>
+</html>
