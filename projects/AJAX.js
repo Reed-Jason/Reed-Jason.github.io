@@ -65,7 +65,7 @@ function getRover() {
             document.getElementById("section3").style.visibility = "visible";
             document.getElementById("section4").style.visibility = "visible";
             var title = document.createElement("h2");
-            var titleTxt = document.createTextNode("Picture from Curiousity");
+            var titleTxt = document.createTextNode("Picture from Curiosity");
             title.appendChild(titleTxt);
             document.getElementById("section4").appendChild(title);
             
