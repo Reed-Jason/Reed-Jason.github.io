@@ -1,0 +1,36 @@
+img {
+    max-width: 40%;
+    max-height: 40%;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.section1 {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 5px;
+}
+
+/section2 {
+    padding: 5px;
+}
+
+h1{
+    font-size: 3vw;
+    background-color: cadetblue;
+}
+
+
+p, h2, h3 {
+    margin: 10px;
+    max-width: 80%;
+}
+
+button {
+    font-size: 18px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.section3, .section4 {
+    visibility: hidden;
+}
