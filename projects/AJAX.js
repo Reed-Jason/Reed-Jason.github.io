@@ -46,9 +46,9 @@ function getPic(){
 function getRover() {
     var date = new Date();
     var year = date.getFullYear();
-    // need to get the month before the current dat since 
+    // need to get the month before the current date since 
     // the rover doesn't update the exact day
-    var month = date.getMonth();
+    var month = date.getMonth() - 2;
     var day = date.getDate();
     var dateToEnter = year + "-" + month + "-" + day;
     
