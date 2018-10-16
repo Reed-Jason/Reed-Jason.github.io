@@ -66,6 +66,7 @@ function loadLocalStorage() {
         
         // Add the madlib
         var paragraph = document.createElement("p");
+        paragraph.setAttribute("class", "madLib");
         var text = madLib[0] + person.first + madLib[1] + person.last + madLib[2] + madLib[3] + person.color + madLib[4] + person.car + madLib[5] + person.food + madLib[6];
         
         node = document.createTextNode(text);
@@ -75,6 +76,7 @@ function loadLocalStorage() {
         var button = document.createElement("button");
         button.setAttribute('type', 'button');
         button.setAttribute('onclick', 'deleteObject()');
+        button.setAttribute('class', 'delete');
         node = document.createTextNode("Delete");
         button.appendChild(node);
         
