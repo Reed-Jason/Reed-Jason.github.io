@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JSON / Local Storage</title>
+        <script src="Storage.js"></script>
+    </head>
+    <body onload="loadLocalStorage()">
+        <h1>JSON / Local Storage Practice</h1>
+        <p>In this webpage, we fill out a form. The form will put it in a JSON object and parse the Object for display. We will then save the items in the form locally</p>
+        <div id="form">
+            <h2>First, fill this form out:</h2>
+            First Name:      <input id='firstName' type="text"><br><br>
+            Last Name:       <input id='lastName' type="text"><br><br>
+            Favorite Color:  <input id='color' type='text'><br><br>
+            Dream Car:       <input id='car' type='text'><br><br>
+            Favorite Food:   <input id='food' type='text'><br><br>
+            <button id='button' onclick='getUserInput()'>Enter</button>
+        </div><br><br>
+        <div id="savedData"></div>
+    </body>
+</html>

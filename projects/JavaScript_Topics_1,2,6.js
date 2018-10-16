@@ -156,6 +156,7 @@ function addEmployee() {
     }
 }
 
+// This function modifies html when the user clicks update hours
 function appendHours(){
     document.getElementById('hoursButton').style.visibility = 'hidden';
     var node = document.createElement("input");
@@ -171,6 +172,7 @@ function appendHours(){
     
 }
 
+// Modify 
 function editHours(){
     document.getElementById('hoursButton').style.visibility = 'visible';
     var person = document.getElementById("employeeList2").value;
