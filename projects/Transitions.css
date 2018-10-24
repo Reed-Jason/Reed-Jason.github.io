@@ -75,5 +75,5 @@ body {
 }
 
 .triangle:hover {
-    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
