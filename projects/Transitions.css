@@ -1,0 +1,79 @@
+body {
+    background-color: #333;
+    color: white;
+    font-family: sans-serif;
+    
+}
+
+.title {
+    position: relative;
+    margin: 45px;
+    text-align: center;
+    border-left: solid 5px white;
+    border-right: solid 5px white;
+}
+
+.p1, .pTransition, .p3 {
+    padding-top: 50px;
+    margin-right: 100px;
+    margin-left: 100px;
+    font-size: 200%;
+}
+
+.box1{
+    float: left;
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    left: 25%;
+}
+
+.box2 {
+    float: right;
+    background-color: white;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    right: 25%;
+    transition-property: background, border-radius;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-out;
+}
+
+.box1:hover, .box2:hover {
+    background-color: skyblue;
+    border-radius: 50%;
+}
+
+.pTransition {
+    clear:both; 
+}
+
+.p2 {
+    padding: 20px;
+    transition-property: border;
+    transition-duration: 2s;
+    transition-timing-function: ease-out;
+}
+
+.p2:hover {
+    border-left: solid 20px;
+    border-right: solid 20px;
+}
+
+.triangle {
+    width: 0;
+	height: 0;
+	border-left: 200px solid transparent;
+	border-right: 200px solid transparent;
+	border-bottom: 400px solid white;
+    position: absolute;
+    left: 35%;
+    transition-property: transform;
+    transition-duration: 2s;
+}
+
+.triangle:hover {
+    -webkit-transform: rotate(180deg);
+}
