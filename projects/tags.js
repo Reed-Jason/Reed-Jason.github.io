@@ -216,6 +216,7 @@ function draw() {
             if(!wallHit.playedOnce) wallHit.play();
             wallHit.playedOnce = true;
             context.clearRect(0,0,800,500);
+            background.render();
             score.endGame();
             score.hitEnter();
             score.endScore();
@@ -262,18 +263,18 @@ function draw() {
     
     document.addEventListener('keydown', function(event){
         // right key
-        if (event.keyCode == '39'){
+        if (event.keyCode == '39' && !gameOver){
             player.x += dist;
             //console.log(player.x)
         } 
         // left key
-        else if (event.keyCode == '37'){
+        else if (event.keyCode == '37' && !gameOver){
             player.x -= dist;
             //console.log(player.x)
         }
         // enter
         else if (event.keyCode == '13'){
-            location.reload();
+            if(gameOver) location.reload();
         }
     });
     
