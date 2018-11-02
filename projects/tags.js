@@ -4,6 +4,41 @@ const minY = 0, minX = 0;
 const bg = new Image();
 bg.src = "stars.jpeg";
 
+function initializeCanvas() {
+    var canvas = document.getElementById("screen");
+    var context = canvas.getContext("2d");
+    var clicked = false;
+    
+    function animate(){
+        console.log("Initializing");
+        context.save();
+        context.clearRect(0, 0, 800, 500); 
+        context.font = "60px Arial";
+        context.textAlign = "center";
+        context.strokeStyle = "white";
+        context.strokeText("Click to Start or Hit Enter", canvas.width/2, canvas.height/2);
+        context.restore();
+    }
+    
+    animate();
+    
+    document.addEventListener('keydown', function(event){
+        if (event.keyCode == '13'){
+            if(!clicked){
+                draw();
+                clicked = true;
+            }
+        }
+    });
+    document.getElementById("screen").addEventListener("click", function() {
+        console.log("clicked");
+        if(!clicked){
+            draw();
+            clicked = true;
+        }
+    });
+}
+
 function handleDirection(direction, dir, object){
     switch (direction){
         case "left":
@@ -55,6 +90,8 @@ function draw() {
     const outsideRange = 70;
     const insideRange = 25;
     
+    var gameOver = false;
+    
     function Background() {
         this.x = 0;
         this.y = 0;
@@ -89,7 +126,7 @@ function draw() {
             context.font = "40px Arial";
             context.textAlign = "center";
             context.fillStyle = "red";
-            context.fillText("Press Enter to Play Again", canvas.width/2, canvas.height/2 + 150);
+            context.fillText("Press Enter or Click to Play Again", canvas.width/2, canvas.height/2 + 150);
         }
         this.endScore = function() {
             context.font = "40px Arial";
@@ -182,6 +219,7 @@ function draw() {
             score.endGame();
             score.hitEnter();
             score.endScore();
+            gameOver = true;
             return;
         }
         
@@ -233,10 +271,17 @@ function draw() {
             player.x -= dist;
             //console.log(player.x)
         }
+        // enter
         else if (event.keyCode == '13'){
             location.reload();
         }
     });
+    
+
+    document.getElementById("screen").addEventListener("click", function(){
+        if(gameOver) location.reload();
+    });
+
     
 
     
@@ -246,5 +291,5 @@ function draw() {
 }
 
 function initialize() {
-    draw();
+    initializeCanvas();
 }

@@ -5,8 +5,11 @@ canvas {
 
 h1 {
     font-size: 55px;
-    padding: inherit;
-    
+    margin-left: 50px;
+    margin-right: 50px;
+    border-left: solid 5px;
+    border-right: solid 5px;
+
 }
 
 body {
@@ -16,4 +19,23 @@ body {
     text-align: center;
     padding-left: 40px;
     padding-right: 40px;
+}
+
+.p1 {
+    margin: 50px;
+    font-size: 24px;
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 40px;
+}
+
+.video {
+    margin-bottom: 100px;
+}
+
+.description {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    border: solid 3px;
 }
