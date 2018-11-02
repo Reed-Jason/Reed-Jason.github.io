@@ -17,6 +17,10 @@ function initializeCanvas() {
         context.textAlign = "center";
         context.strokeStyle = "white";
         context.strokeText("Click to Start or Hit Enter", canvas.width/2, canvas.height/2);
+        context.font = "40px Arial";
+        context.textAlign = "center";
+        context.fillStyle = "red";
+        context.fillText("Use LEFT and RIGHT Arrows", canvas.width/2, canvas.height/2 + 75);
         context.restore();
     }
     
@@ -113,7 +117,7 @@ function draw() {
         } 
         this.render = function() {
             context.font = "30px Arial";
-            context.strokeStyle = "white";
+            context.strokeStyle = "yellow";
             context.strokeText("Score: " + this.score, 25, 30);
         }
         this.endGame = function() {
@@ -141,7 +145,7 @@ function draw() {
         this.y = parseFloat((Math.random() * 100).toFixed(0));
         this.render = function() {
             //console.log(this.y);
-            context.fillStyle = "white";
+            context.fillStyle = "orange";
             context.beginPath();
             context.arc(this.x,this.y,25,0,2*Math.PI);
             context.closePath();
