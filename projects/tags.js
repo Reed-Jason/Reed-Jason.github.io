@@ -48,12 +48,12 @@ function handleDirection(direction, dir, object){
         case "left":
             if (dir) object.y -= 5;
             else object.y += 5;
-            object.x -=5;
+            object.x -=3;
             break;
         case "right":
             if (dir) object.y -= 5;
             else object.y += 5;
-            object.x += 5;
+            object.x += 3;
             break;
         case "middle":
             if (dir) object.y -= 5;
