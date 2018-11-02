@@ -1,0 +1,19 @@
+canvas {
+    border-style: solid;
+    border-width: 3px;
+}
+
+h1 {
+    font-size: 55px;
+    padding: inherit;
+    
+}
+
+body {
+    background-color: #333;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
