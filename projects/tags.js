@@ -1,14 +1,18 @@
-// Global variables for screen dimension
+// Global variables for screen dimension and background image link
 const maxY = 500, maxX= 800;
 const minY = 0, minX = 0;
 const bg = new Image();
 bg.src = "stars.jpeg";
 
+/*
+* The purpose of the function is to get the canvas set up wit directions
+*/
 function initializeCanvas() {
     var canvas = document.getElementById("screen");
     var context = canvas.getContext("2d");
     var clicked = false;
     
+    // Draw the directions on the screen
     function animate(){
         console.log("Initializing");
         context.save();
@@ -24,8 +28,10 @@ function initializeCanvas() {
         context.restore();
     }
     
+    // run the function
     animate();
     
+    // Event listeners for enter button and click
     document.addEventListener('keydown', function(event){
         if (event.keyCode == '13'){
             if(!clicked){
@@ -43,6 +49,12 @@ function initializeCanvas() {
     });
 }
 
+/*
+* This function takes in three inputs: direction, dir, and object.
+* The purpose of this function is to tell where the pong ball should go.
+* It takes in a direction to tell it whether to move left, straight, or right.
+* Th input dir tells it to either move up (true) or down(false)
+*/
 function handleDirection(direction, dir, object){
     switch (direction){
         case "left":
@@ -62,6 +74,10 @@ function handleDirection(direction, dir, object){
     }
 }
 
+/*
+* This is an object so that we can initialize multiple sound objects.
+* It takes in an input for the directory of the sound file
+*/
 function Sound(src) {
     this.sound = document.createElement("audio");
     this.sound.src = src;
@@ -79,6 +95,9 @@ function Sound(src) {
 }
 
 
+/*
+* This is the bread and butter for the canvas animation
+*/
 function draw() {
     var canvas = document.getElementById("screen");
     var context = canvas.getContext("2d");
@@ -93,9 +112,10 @@ function draw() {
     // where the collisions could happen
     const outsideRange = 70;
     const insideRange = 25;
-    
+    // boolean for the program to tell if the game is over
     var gameOver = false;
     
+    // draw a moving image in the background
     function Background() {
         this.x = 0;
         this.y = 0;
@@ -109,6 +129,7 @@ function draw() {
         }
     }
     
+    // Holds the score and directional instruction
     function Score(){
         this.score = 0;
         this.end = "Game Over!";
@@ -139,8 +160,9 @@ function draw() {
             context.strokeText("Score: " + this.score, canvas.width/2, canvas.height/2 + 75);
         }
     }
-    
+    // Render the pong ball
     function Pong(){
+        // initialize the pong ball at a random
         this.x = parseFloat((Math.random() * 750).toFixed(0));
         this.y = parseFloat((Math.random() * 100).toFixed(0));
         this.render = function() {
@@ -153,7 +175,7 @@ function draw() {
             //console.log("Pong: " + this.x + " " + this.y)
         }
     }
-    
+    // Render the bottom rectangle that the user controls
     function Player(){
         this.x = 400;
         this.y = 490;
@@ -172,11 +194,13 @@ function draw() {
     var sound = new Sound("ping_pong.wav");
     var paddle = new Sound("paddle.wav");
     var wallHit = new Sound("wallHit.wav");
-    //console.log(dimension.keyX);\
-
     
+    // lets have the pong ball aligned with the player
+    player.x = pong.x;
+    
+    // this function will allow us to set interval on the animation
     function animate() {
-        
+        // set up the screen for rendering
         context.save()
         context.clearRect(0, 0, 800, 500);
         background.render();
@@ -228,6 +252,7 @@ function draw() {
             return;
         }
         
+        // where the pong ball needs to move
         handleDirection(direction, dir, pong);
         
         // Don't let the user bounce it in the middle infinitely
@@ -262,9 +287,10 @@ function draw() {
         //console.log("X: "+player.x+" Y: "+player.y);
     }
     
-    
+    // set an interval to animate the screen every 10 milliseconds
     var animateInterval = setInterval(animate, 10);
     
+    // listen for keydowns so that we can update the screen
     document.addEventListener('keydown', function(event){
         // right key
         if (event.keyCode == '39' && !gameOver){
@@ -282,12 +308,10 @@ function draw() {
         }
     });
     
-
+    // listen for clicks on the canvas screen
     document.getElementById("screen").addEventListener("click", function(){
         if(gameOver) location.reload();
     });
-
-    
 
     
    // console.log("Y: " + y, " X: " + x + " Mouse: " + dimension.keyX);
