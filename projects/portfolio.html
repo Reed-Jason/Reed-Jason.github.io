@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jason's Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="portfolio.css">
+        <script src="portfolio.js"></script>
+    </head>
+    <body onload="start()">
+        <ul id='navBar'>
+            <li><a id='home' onclick="triggerDiv('home')">Home</a></li>
+            <li><a id='skills' onclick="triggerDiv('skills')">Skills</a></li>
+            <li><a id='contact' onclick="triggerDiv('contact')">Contact</a></li>
+        </ul>
+        <div id='home1'>
+            <div class='title'>
+                <h1>Hello My Name is Jason!</h1>
+                <p>Software Engineer</p>
+            </div>
+            <div class='about'>
+                <h1>I like to build things.</h1>
+                <p>I am a Software Engineering student here at Brigham Young University - Idaho. I have a passion for all aspects of programming
+                such as front-end, back-end, database design, and embedded systems. My anticipated graduation is December 2019. </p>
+            </div>
+        </div>
+        <div id='skills1'>
+            <div class='title'>
+                <h1>Skills</h1>
+                <p>Over the years, I have culminated a wide range of skills.</p>
+            </div>
+            <div class='container'>
+                <div class='p1'>
+                    <h1>Software Development</h1>
+                    <p>Java, C/C++, Python, Kotlin</p>
+                </div>
+                <div class='p2'>
+                    <h1>Web Development</h1>
+                    <p>Html5, CSS3, JavaScript, PHP, NodeJs, AngularJs, Bootstrap</p>
+                </div>
+            </div>
+            <div class='p3' id='projects'>
+                <h1>Projects <i class="down" id='down' onclick="increaseProject()"></i></h1>
+                <p id="projectContent">
+                    1. Ecommerce Website Using PHP / PSQL <br>
+                    2. Journal Application Using NodeJs <br>
+                    3. Asteroids <br>
+                    4. Ornithopter (Robo-bird) <br>
+                    5. Student Activities Android App</p>
+            </div>
+        </div>
+        <div id='contact1'>
+            <div class='title'>
+                <h1>Contact</h1>
+                <p>Email: jjreed05@gmail.com</p>
+                <p>Connect: <a href="https://www.linkedin.com/in/jason-reed-45745880/">LinkedIn</a></p>
+            </div>
+        </div>
+    </body>
+</html>

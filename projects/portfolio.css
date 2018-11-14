@@ -1,0 +1,113 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #111;
+    opacity: 0.1;
+    position: relative;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: monospace;
+}
+
+li a:hover {
+    background-color: #333 !important;
+}
+
+#home1, #skills1, #contact1 {
+    margin-top: 35px;
+    border-radius: 5px;
+    position: relative;
+    /*animation: paragraph;
+    animation-duration: 2.5s;
+    animation-fill-mode: forwards;*/
+}
+
+@keyframes paragraph {
+    0% {left: -1000px}
+    100% {left: 0px}
+}
+
+@keyframes moveLeft {
+    0% {left: 1000px}
+    100% {left: 0px}
+}
+
+.title {
+    background-color: white;
+    padding: 35px;
+    text-align: center;
+    color: black;
+    font-family: Monospace;
+    font-size: 35px;
+}
+
+.about {
+    background-color: #B82601;
+    padding: 35px;
+    text-align: center;
+    color: white;
+    font-family: Monospace;
+    font-size: 25px;
+}
+.container{
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    background-color: #ff4d4d;
+    box-shadow: 0 15px 30px 0 lightGray;
+    
+}
+.p1 {
+    padding: 35px;
+    text-align: center;
+    color: black;
+    font-family: Monospace;
+    font-size: 25px;
+}
+
+.p2 {
+    padding: 35px;
+    text-align: center;
+    color: black;
+    font-family: Monospace;
+    font-size: 25px;
+}
+
+.p3 {
+    background-color: #333;
+    padding: 35px;
+    text-align: center;
+    color: white;
+    font-family: Monospace;
+    font-size: 25px;
+}
+
+i {
+  border: solid white;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 10px;
+    cursor: pointer;
+}
+
+.down {
+    transform: rotate(45deg);
+
+}
+
+#projectContent {
+    display: none;
+}
