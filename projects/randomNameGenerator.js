@@ -52,7 +52,8 @@ function displayPersons(){
     });
 }
 
-function randomizeNames() 
+function randomizeNames() {
+    
     // Variables needed to keep track of things
     var index = 0;
     var length = nameList.length;
@@ -91,7 +92,7 @@ function randomizeNames()
 
 function displayResults(object){
     object.forEach(function(element) {
-        //console.log(element);
+        console.log(element);
         var list = document.createElement("LI");
         list.setAttribute("class", "list-group-item");
         var text = document.createTextNode(element.person1 + " -> " + element.person2);
