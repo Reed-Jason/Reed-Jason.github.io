@@ -52,10 +52,7 @@ function displayPersons(){
 }
 
 function randomizeNames() {
-    // Make sure everyone isn't claimed by setting variable to false
-    nameList.forEach(function(element){
-        element.reset();
-    });
+    document.getElementById('button').style.display = "none";
     
     // Variables needed to keep track of things
     var index = 0;
@@ -94,7 +91,6 @@ function randomizeNames() {
 }
 
 function displayResults(object){
-    document.getElementById('button').style.display = "none";
     object.forEach(function(element) {
         console.log(element);
         var list = document.createElement("LI");
