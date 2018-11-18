@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <title>Reed/Bennett/Bride Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src='randomNameGenerator.js'></script>
+</head>
+<body onload="displayPersons()">
+    <div class="jumbotron text-center">
+        <h1>Name Generator - Reed, Bennett, Bride</h1>
+    </div>
+    <div class="card rounded w-50 mx-auto">
+        <div class="card-header">Members</div>
+        <div class="card-body"><p class="list-group" id="nameList"></p>
+        </div>
+    </div>
+    <br>
+    <div class="text-center">
+        <button type="button" id="button" class="btn btn-success pull-center" onclick="randomizeNames()">Draw Names</button>
+    </div>
+    <br>
+    
+    <div class="card w-75 mx-auto" style="display:none" id="results">
+        <div class="card-header">Results</div>
+        <div class="card-body">
+            <ul class="list-group" id="resultText">
+            </ul>
+        </div>
+    </div>
+</body>   
+</html>
