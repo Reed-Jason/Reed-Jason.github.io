@@ -91,7 +91,7 @@ function randomizeNames()
 
 function displayResults(object){
     object.forEach(function(element) {
-        console.log(element);
+        //console.log(element);
         var list = document.createElement("LI");
         list.setAttribute("class", "list-group-item");
         var text = document.createTextNode(element.person1 + " -> " + element.person2);
