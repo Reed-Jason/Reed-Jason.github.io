@@ -1,3 +1,17 @@
+// Global constant variables
+const jason = new Person("Jason", "Julia");
+const julia = new Person("Julia", "Jason");
+const casey = new Person("Casey", "Becca");
+const becca = new Person("Becca", "Casey");
+const daniel = new Person("Daniel", "MaryAnn");
+const maryAnn = new Person("MaryAnn", "Daniel");
+const mcCall = new Person("McCall", "Launce");
+const launce = new Person("Launce", "McCall");
+const nameList = [jason, julia, casey, becca, daniel, maryAnn, mcCall, launce];
+
+/*
+* Person Object: will hold data about each person
+*/
 function Person (first, spouse) {
     this.first = first;
     this.spouse = spouse;
@@ -21,23 +35,18 @@ function Person (first, spouse) {
     }
 }
 
+/*
+* Pair Object: this will be used to hold two people
+*/
 function Associate (person1, person2) {
     this.person1 = person1;
     this.person2 = person2;
 }
 
-const jason = new Person("Jason", "Julia");
-const julia = new Person("Julia", "Jason");
-const casey = new Person("Casey", "Becca");
-const becca = new Person("Becca", "Casey");
-const daniel = new Person("Daniel", "MaryAnn");
-const maryAnn = new Person("MaryAnn", "Daniel");
-const mcCall = new Person("McCall", "Launce");
-const launce = new Person("Launce", "McCall");
-
-const nameList = [jason, julia, casey, becca, daniel, maryAnn, mcCall, launce];
-
-
+/*
+* No Inputs
+* Displays each person on the array
+*/
 function displayPersons(){
     var i = 0
     nameList.forEach(function(element) {
@@ -52,8 +61,16 @@ function displayPersons(){
     });
 }
 
+/*
+* No Inputs
+* This function randomizes a selection of a person off the nameList array.
+* If constraints cannot be made and names cannot be selected, it will return false.
+* If selections were made, it will return true.
+*/
 function randomizeNames() {
-    
+    nameList.forEach(function(element) {
+        element.reset();
+    });
     // Variables needed to keep track of things
     var index = 0;
     var length = nameList.length;
@@ -61,23 +78,39 @@ function randomizeNames() {
     
     // Iterate through everyon on the list
     while (randomNames.length < 8 ){
+        //console.log("main loop");
         var person = nameList[index];
         var random = 0;
-        
+        var loopCount = 0;
         // Generate a random person
         while (true){
+            //console.log("random Person loop");
             random = Math.floor(Math.random() * length);
-            var person2 = nameList[random]
+            var person2 = nameList[random];
+
             
             // Constraints: Cannot be the same person, not a spouse, and not claimed
             if (random != index && !person.isSpouse(person2.first) && !person2.isTaken) {
                 break;
             }
-        }
+            // Selection could not be made due to conflicting constraints
+            else if (loopCount >= 20) {
+                console.log("BUG ALERT");
+                /*console.log("Bug Index: " + index);
+                randomNames.forEach(function(element){
+                    console.log("BUG Pairs: " + element.person1 + " - " + element.person2)
+                });*/
+                return false;
+            }
+            //console.log("Random: " + random);
+            //console.log("Index: " + index);
+            //console.log(loopCount)
+            loopCount++;
+        }loopCount = 0;
         
         // The person is claimed
         person2.claimed();
-        console.log(person.first + " - " + person2.first);
+        //console.log(person.first + " - " + person2.first);
         
         // Create a pair object and push it onto an array
         var pair = new Associate(person.first, person2.first);
@@ -88,11 +121,17 @@ function randomizeNames() {
     }
     
     displayResults(randomNames);
+    return true;
 }
 
+
+/*
+* Input: an array of pairs
+* Displays the pairs using the DOM
+*/
 function displayResults(object){
     object.forEach(function(element) {
-        console.log(element);
+        //console.log(element);
         var list = document.createElement("LI");
         list.setAttribute("class", "list-group-item");
         var text = document.createTextNode(element.person1 + " -> " + element.person2);
@@ -104,7 +143,18 @@ function displayResults(object){
     });
 }
 
+/*
+* No Inputs
+* This will rund the randomize names function until a good selection is made.
+* It will then display the selections.
+*/
 function runCode(){
     document.getElementById('button').style.display = "none";
-    setTimeout(randomizeNames(), 300);
+    var run = randomizeNames();
+    
+    // run until a a good selection has been made
+    while(!run) {
+        console.log("bad mix");
+        run = randomizeNames()
+    }
 }
