@@ -37,6 +37,7 @@ const launce = new Person("Launce", "McCall");
 
 const nameList = [jason, julia, casey, becca, daniel, maryAnn, mcCall, launce];
 
+
 function displayPersons(){
     var i = 0
     nameList.forEach(function(element) {
@@ -51,9 +52,7 @@ function displayPersons(){
     });
 }
 
-function randomizeNames() {
-    document.getElementById('button').style.display = "none";
-    
+function randomizeNames() 
     // Variables needed to keep track of things
     var index = 0;
     var length = nameList.length;
@@ -102,4 +101,9 @@ function displayResults(object){
         document.getElementById("results").style.display = "inherit";
 
     });
+}
+
+function runCode(){
+    document.getElementById('button').style.display = "none";
+    setTimeout(randomizeNames(), 300);
 }
