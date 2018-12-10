@@ -1,0 +1,50 @@
+<!Doctype html>
+<html lang="en-us">
+    <head>
+        <title>Employee Tracker</title>
+        <link rel="stylesheet" type="text/css" href="employee_tracker.css">
+        <script src="employee_tracker.js"></script>
+    </head>
+    <body onload="mainExecution()">
+        <ul id='navBar'>
+            <li class ='navLi'><a class='navA' id='home' onclick="triggerDiv('home')">Home</a></li>
+            <li class ='navLi'><a class='navA' id='individuals' onclick="triggerDiv('individuals')">Individuals</a></li>
+            <li class ='navLi'><a class='navA' id='total' onclick="triggerDiv('total')">Payout</a></li>
+        </ul>
+        <h1 id="title">Employee Pay Tracker</h1>
+        <div class="card employees" id="home1">
+            <h2>Employees</h2>
+            <ul id="employeeList"></ul>
+            <button class="btn" id="addEmployee" onclick="appendEmployeeForm()">Add Employee</button>
+        </div>
+        <div class="card" id="employeeForm">
+            <h2>First Name: </h2>
+                <input id="firstname"> 
+            <h2>Last Name: </h2>
+                <input id="lastname">
+            <h2>Age: </h2>
+                <input id="age">
+            <h2>Salary: </h2>
+                <input id="salary">
+            <br>
+            <button class="btn" id="newEmpBtn" onclick="addEmployee()">Submit</button>
+        </div>
+        <br>
+        <div class="card individuals" id="individuals1">
+            <h2>Individual Pay</h2>
+            <select id="employeeList2" onchange="individualPay(value)">
+            </select>
+                <h3 id="name"></h3>
+                <p id="salary"></p>
+                <p id="hours"></p>
+                <p id="pay"></p>
+            <button class="btn" id="hoursButton" onclick=appendHours()>Update Hours</button>
+            <div id="updateHours"></div>
+        </div>
+        <div class="card total" id="total1">
+        <h2>Total Pay</h2>
+            <p>Total Hours: <span id="totalHours"></span></p>
+            <p id="totalPay"></p>
+        </div>
+    </body>
+</html>
