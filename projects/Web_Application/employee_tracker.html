@@ -34,16 +34,18 @@
             <h2>Individual Pay</h2>
             <select id="employeeList2" onchange="individualPay(value)">
             </select>
+            <div id='transform'>
                 <h3 id="name"></h3>
                 <p id="salary"></p>
                 <p id="hours"></p>
                 <p id="pay"></p>
+            </div>
             <button class="btn" id="hoursButton" onclick=appendHours()>Update Hours</button>
             <div id="updateHours"></div>
         </div>
         <div class="card total" id="total1">
         <h2>Total Pay</h2>
-            <p>Total Hours: <span id="totalHours"></span></p>
+            <p id="totalHours"></p>
             <p id="totalPay"></p>
         </div>
     </body>

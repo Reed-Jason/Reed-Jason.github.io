@@ -263,11 +263,7 @@ function individualPay(person){
     document.getElementById("salary").innerHTML = "Salary: $" + employeeArr[person].salary.toFixed(2);
     document.getElementById("hours").innerHTML = "Hours: " + employeeArr[person].hours.toFixed(2);
     document.getElementById("pay").innerHTML = "Pay: $" + employeeArr[person].calculatePay().toFixed(2);
-    
-    var elem = document.getElementById("transform").style;
-    elem.transform = "skewy(150deg)";
-    elem.transition = "transform 2.0s linear";
-    elem.transform = "skewy(0deg)";
+
 
 }
 
