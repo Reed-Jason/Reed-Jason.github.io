@@ -1,13 +1,13 @@
 // Global constant variables
 const jason = new Person("Jason", "Julia");
 const julia = new Person("Julia", "Jason");
-const casey = new Person("Casey", "Becca");
-const becca = new Person("Becca", "Casey");
-const daniel = new Person("Daniel", "MaryAnn");
-const maryAnn = new Person("MaryAnn", "Daniel");
-const mcCall = new Person("McCall", "Launce");
-const launce = new Person("Launce", "McCall");
-const nameList = [jason, julia, casey, becca, daniel, maryAnn, mcCall, launce];
+const tyler = new Person("Tyler", "Jessica");
+const jessica = new Person("Jessica", "Tyler");
+const jayne = new Person("Jayne", "Christian");
+const christian = new Person("Christian", "Jayne");
+const jake = new Person("Jake", "Shannon");
+const shannon = new Person("Shannon", "Jake");
+const nameList = [jason, julia, tyler, jessica, jayne, christian, jake, shannon];
 
 /*
 * Person Object: will hold data about each person

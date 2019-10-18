@@ -1,0 +1,126 @@
+html{
+    font-family: monospace;  
+    color: #232f34;
+}
+
+#navBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #014472;
+    opacity: 0.1;
+    position: relative;
+    border-radius: 5px;
+}
+
+.navLi {
+    float: left;
+}
+
+.navLi .navA {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: monospace;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.navLi .navA:hover {
+    background-color: #232f34 !important;
+}
+
+#title {
+    margin-left: 10px;
+    transform: scale(0.5);
+}
+
+#employeeList, p {
+    font-size: 20px;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+    margin-left: 10px;
+    padding: 10px;
+    padding-left: 20px;
+    margin-right: 10px;
+    background-color: white;
+    border-radius: 5px;
+    position: relative;
+}
+
+.btn {
+    background-color: #014472;
+    border: none;
+    color: white;
+    font-size: 14px;
+    margin-left: 10px;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.25s linear;
+}
+
+.btn:hover {
+    transform: scale(1.10);
+}
+
+#employeeForm {
+    margin-top: 20px;
+    display: none;
+    padding: 25px;
+    padding-left: 50px;
+}
+
+input {
+    border-radius: 8px;
+    padding-left: 10px;
+    padding: 5px;
+    border-color: #014472;
+    margin-left: 45px;
+    margin-right: 15px;
+}
+
+#newEmpBtn {
+    margin-top: 25px;
+    margin-left: 0px;
+    width: 100px;
+   
+}
+
+#updateHours{
+    margin-left: 0px !important;
+}
+
+.individuals, .total{
+    display: none;
+}
+
+#total1 {
+    margin-left: 25px;
+    transition: transform 0.25s linear;
+}
+
+#total1:hover {
+    transform: scale(1.03)
+}
+@keyframes card {
+    0% {left: -1000px}
+    100% {left: 0px}
+}
+
+@keyframes moveLeft {
+    0% {right: -1000px}
+    100% {right: 0px}
+}
+
+@keyframes changeColor {
+    0% {background-color: #eaa225}
+    100% {background-color: white}
+}
+
